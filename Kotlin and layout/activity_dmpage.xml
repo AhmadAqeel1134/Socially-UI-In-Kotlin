@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DMPage">
+
+    <RelativeLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/HeaderBar"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/Back"
+                android:layout_centerVertical="true"
+                android:background="@drawable/backlogo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/Username"
+                android:layout_centerVertical="true"
+                android:text="Loading..."
+                android:textSize="20sp"
+                android:textColor="#303032"
+                android:layout_toRightOf="@id/Back"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/CreateGroup"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/creategroupbutton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/HeaderBar"
+            android:id="@+id/Options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <RelativeLayout
+                android:id="@+id/DMOptions"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/myBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DMs"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"
+                    android:background="@null"
+                    android:textStyle="bold"
+                    android:textColor="#58442F"/>
+
+                <View
+                    android:id="@+id/Divider"
+                    android:layout_width="90dp"
+                    android:layout_height="3dp"
+                    android:layout_below="@id/myBtn"
+                    android:layout_marginTop="-10dp"
+                    android:background="#58442F"/>
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/Request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Requests"
+                    android:textSize="18sp"
+                    android:textColor="#303032"
+                    android:textAllCaps="false"
+                    android:background="@null"
+                    android:layout_marginEnd="25dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SearchBar"
+            android:layout_marginTop="-20dp"
+            android:layout_below="@id/Options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/Search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search for DMs"
+                android:textColorHint="#A8A9AB"
+                android:layout_centerVertical="true"
+                android:background="@drawable/search_button"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/SearchLogo"
+                android:background="@drawable/searchlogo"
+                android:layout_centerVertical="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dmRecyclerView"
+            android:layout_below="@id/SearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="70dp"
+            tools:listitem="@layout/item_chat"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
