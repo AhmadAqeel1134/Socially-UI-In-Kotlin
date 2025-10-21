@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303032"
+    tools:context=".VanishingChatPage">
+
+    <RelativeLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/HeaderBar"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/Back"
+                android:layout_centerVertical="true"
+                android:background="@drawable/backlogowhite"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/Username"
+                android:layout_centerVertical="true"
+                android:text="Loading..."
+                android:textSize="20sp"
+                android:textColor="#FFF"
+                android:layout_toRightOf="@id/Back"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ChatPerson"
+            android:layout_below="@id/HeaderBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ProfilePic"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/dummyprofilepic"
+                android:layout_centerHorizontal="true"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+
+            <Button
+                android:id="@+id/Profile"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/ProfilePic"
+                android:text="View Profile"
+                android:textAllCaps="false"
+                android:background="@drawable/vanish_rectangle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:paddingHorizontal="20dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ChatBox"
+            android:layout_marginVertical="10dp"
+            android:layout_below="@id/ChatPerson"
+            android:layout_above="@id/TextBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/messagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_user_message_vanish" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TextBar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/messageInput"
+                android:background="@drawable/vanish_text_button"
+                android:layout_width="match_parent"
+                android:hint="Typing..."
+                android:textColorHint="#CAC4BE"
+                android:padding="20dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/sendButton"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/sendlogo"
+                android:layout_marginRight="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
